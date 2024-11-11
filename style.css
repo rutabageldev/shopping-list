@@ -1,3 +1,129 @@
-li {
-    margin-bottom: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-background-primary: #F2F2F2;
+    --color-font-primary: #0D0D0D;
+    --color-font-secondary: #0A4036;
+    --color-blue-primary: #35D0F2;
+    --color-blue-secondary: #1DF2F2;
+    --color-green-primary: #0A4036;
+    --font-family-primary: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --font-weight-light: 300;
+    --font-weight-mid: 400;
+    --font-weight-primary: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 800;
+    --padding-small: 8px;
+    --padding-mid: 16px;
+    --padding-large: 32px;
+    --padding-giant: 40px;
+}
+
+body {
+    background-color: var(--color-background-primary);
+    color: var(--color-font-primary);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-primary);
+    justify-content: center;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--color-font-primary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+
+    font-weight: var(--font-weight-black);
+}
+
+.text-input {
+    font-weight: var(--font-weight-light);
+    font-style: italic;
+}
+
+.input-container {
+    display:flex;
+    flex-direction: column;
+    margin: 0 12px;
+}
+
+input[type="text"] {
+    background-color: var(--color-blue-secondary);
+    border: 2px solid var(--color-blue-primary);
+    border-radius: 4px;
+    color: var(--color-font-secondary);
+    margin-bottom: 8px;
+    padding: var(--padding-small);
+}
+
+input[type="text"]:focus {
+    border-color: var(--color-green-primary);
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.button-add {
+    background-color: var(--color-blue-primary);
+    border: none;
+    border-radius: 4px;
+    color: var(--color-background-primary);
+    cursor: pointer;
+    font-weight: var(--font-weight-semibold);
+    max-width: 200px;
+    padding: 8px 12px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button.button-add:hover {
+    background-color: var(--color-green-primary);
+    color: var(--color-background-primary);
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    max-width: 400px;
+    padding: 0;
+
+}
+
+.item-container {
+    align-items: center;
+    background-color: #E5E7Eb;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 8px;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.item-container:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f0f4F8;
+}
+
+.button-delete {
+    align-items: center;
+    background-color: var(--color-green-primary);
+    color: var(--color-background-primary);
+    border: none;
+    border-radius: 40px;
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    padding: 4px 8px;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.button-delete:hover {
+    background-color: var(--color-blue-primary);
+    color: var(--color-font-primary);
 }

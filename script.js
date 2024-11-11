@@ -31,7 +31,7 @@ function buildListItem(text) {
     // Create the delete button
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("button-delete");
-    deleteButton.textContent = "Delete";
+    deleteButton.textContent = "x";
     deleteButton.addEventListener("click", () => deleteListItem(itemContainer));
 
     // Build the list item
