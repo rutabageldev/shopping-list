@@ -3,14 +3,22 @@ const inputField = document.querySelector("#text-input");
 const listContainer = document.querySelector(".list-container");
 
 addButton.addEventListener("click", addItem);
+inputField.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        console.log(e);
+        addItem();
+    }
+});
 
 function addItem(e) {
     console.log(e);
     const text = inputField.value.trim();
-    listContainer.appendChild(buildListContainer(text));
+    listContainer.appendChild(buildListItem(text));
+    inputField.value = "";
+    inputField.focus();
 }
 
-function buildListContainer(text) {
+function buildListItem(text) {
     // Create list item container
     const itemContainer = document.createElement("li");
     itemContainer.classList.add("item-container");
@@ -24,10 +32,15 @@ function buildListContainer(text) {
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("button-delete");
     deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", () => deleteListItem(itemContainer));
 
     // Build the list item
     itemContainer.appendChild(listItem);
     itemContainer.appendChild(deleteButton);
 
     return itemContainer;
+}
+
+function deleteListItem(item) {
+    item.remove();
 }
